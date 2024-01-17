@@ -23,9 +23,10 @@ const handleSubmit = useCallback(
   async (event) => {
     event.preventDefault();
     setConnecting(true);
+    console.log(process.env.base_url);
 
     try {
-      const response = await axios.post("/video/token", {
+      const response = await axios.post("http://localhost:3006/video/token", {
         identity: username,
         room: roomName,
       });

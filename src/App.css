@@ -15,7 +15,7 @@ body {
 }
 
 header {
-  background: #f0293e;
+  background: #333e5a;
   color: #fff;
   text-align: center;
   flex-grow: 0;
@@ -23,7 +23,7 @@ header {
 }
 
 h1 {
-  font-weight: 300;
+  font-weight: 400;
   padding: 0.4em 0;
 }
 
@@ -124,7 +124,7 @@ button:hover {
 
 video {
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   display: block;
   margin: 0 auto;
   border-radius: 6px;
