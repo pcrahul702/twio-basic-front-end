@@ -1,8 +1,8 @@
-# Twilio Video chat with React Hooks
+# Twilio Video call aplication
 
-This is an example video chat application built with [Twilio Video](https://www.twilio.com/docs/video) and React, using Hooks.
+This is an example video chat application built with [Twilio Video](https://www.twilio.com/docs/video) and React, 
 
-Learn how to build this entire application in the blog post [Build a Twilio Video Chat with React Hooks](https://www.twilio.com/blog/video-chat-react-hooks).
+Learn how to build this entire application in the blog post [Build a Twilio Video Call
 
 ## Preparing the application
 
