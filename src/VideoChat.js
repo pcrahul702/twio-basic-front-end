@@ -23,17 +23,21 @@ const handleSubmit = useCallback(
   async (event) => {
     event.preventDefault();
     setConnecting(true);
-    console.log(process.env.base_url);
+    // console.log(process.env.base_url);
+
+    console.log("button clicked")
 
     try {
       const response = await axios.post("http://localhost:3006/video/token", {
         identity: username,
         room: roomName,
+        // expiresIn :"60"
       });
-
+      
+      // localStorage.setItem("token", response.data.token);
       const data = response.data;
-
-      Video.connect(data.token, {
+      // let toke=JSON.parse(localStorage.getItem('token'))
+      Video.connect(response.data.token, {
         name: roomName,
       })
         .then((room) => {
@@ -78,8 +82,8 @@ const handleSubmit = useCallback(
       window.addEventListener("pagehide", tidyUp);
       window.addEventListener("beforeunload", tidyUp);
       return () => {
-        window.removeEventListener("pagehide", tidyUp);
-        window.removeEventListener("beforeunload", tidyUp);
+       // window.removeEventListener("pagehide", tidyUp);
+       // window.removeEventListener("beforeunload", tidyUp);
       };
     }
   }, [room, handleLogout]);

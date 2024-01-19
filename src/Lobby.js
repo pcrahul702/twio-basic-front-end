@@ -1,5 +1,5 @@
 import React from "react";
-
+import Button from 'react-bootstrap/Button';
 const Lobby = ({
   username,
   handleUsernameChange,
@@ -10,7 +10,7 @@ const Lobby = ({
 }) => {
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Enter a room</h2>
+      <h2>Join a room</h2>
       <div>
         <label htmlFor="name">Name:</label>
         <input
@@ -35,9 +35,9 @@ const Lobby = ({
         />
       </div>
 
-      <button type="submit" disabled={connecting}>
+      <Button type="submit" disabled={connecting} className="btn btn-success w-100" size="lg">
         {connecting ? "Connecting" : "Join"}
-      </button>
+      </Button>
     </form>
   );
 };
