@@ -71,7 +71,7 @@ form > div > input {
 }
 
 button {
-  background: #333e5a;
+  background: red;
   color: #fff;
   font-size: 16px;
   padding: 0.4em;
@@ -85,7 +85,8 @@ button:hover {
 .room {
   position: relative;
 }
-.room button {
+.room leave {
+  
   position: absolute;
   top: 0;
   right: 20px;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Participant from "./Participant";
-
+import Button from 'react-bootstrap/Button';
 const Room = ({ roomName, room, handleLogout, }) => {
   const [participants, setParticipants] = useState([]);
 
@@ -25,26 +25,35 @@ const Room = ({ roomName, room, handleLogout, }) => {
   }, [room]);
 
   const remoteParticipants = participants.map((participant) => (
-    <Participant key={participant.sid} participant={participant} />
+    <Participant key={participant.sid} participant={participant} remote={true} />
   ));
 
   return (
     <div className="room">
-      <h2>Room: {roomName}</h2>
-      <button>mute</button>
-      <button onClick={handleLogout}>Log out</button>
+      <h2>GroupName: {roomName}</h2>
+     {/* <div className="container-fluid d-flex justify-content-end gap-2">
+     <Button variant="danger"  onClick={handleLogout} className="btn btn-danger rounded-lg leave">leave</Button>
+    
+     </div> */}
       <div className="local-participant">
         {room ? (
           <Participant
             key={room.localParticipant.sid}
             participant={room.localParticipant}
+            handleLogout={handleLogout}
           />
         ) : (
           ""
         )}
       </div>
-      <h3>Remote Participants</h3>
-      <div className="remote-participants">{remoteParticipants}</div>
+      {
+        // console.log(remoteParticipants)
+        remoteParticipants.length!=0?<><h3>Remote Participants</h3>
+        <div className="remote-participants">{remoteParticipants}</div></>:""
+        
+        
+      }
+      
     </div>
   );
 };
